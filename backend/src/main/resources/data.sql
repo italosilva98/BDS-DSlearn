@@ -22,3 +22,7 @@ INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0
 INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('Trilha HTML','Trilha principal do curso',1,'https://google.com',1,'http://external.link',1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('Trilha Angular','Trilha principal do curso',2,'https://google.com',0,'http://external.link',1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('FORUM','Trilha principal do curso',3,'https://google.com',2,'http://external.link',1);
+
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capítulo 1','Capítulo inicial',1, 'http://google.com',1,null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capítulo 2','Capítulo inicial',2, 'http://google.com',1, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capítulo 3','Capítulo inicial',3, 'http://google.com',1, 2);
