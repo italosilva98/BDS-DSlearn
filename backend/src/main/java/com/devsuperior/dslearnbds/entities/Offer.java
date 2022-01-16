@@ -1,9 +1,11 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +24,12 @@ public class Offer implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String edition;
-	private String startMoment;
-	private String endMoment;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant startMoment;
+
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant endMoment;
 	
 	@ManyToOne
 	@JoinColumn(name = "course_id") //Mapear chave estrangeira
@@ -35,7 +41,7 @@ public class Offer implements Serializable {
 	public Offer() {
 	}
 
-	public Offer(Long id, String edition, String startMoment, String endMoment, Course course) {
+	public Offer(Long id, String edition, Instant startMoment, Instant endMoment, Course course) {
 		this.id = id;
 		this.edition = edition;
 		this.startMoment = startMoment;
@@ -59,19 +65,19 @@ public class Offer implements Serializable {
 		this.edition = edition;
 	}
 
-	public String getStartMoment() {
+	public Instant getStartMoment() {
 		return startMoment;
 	}
 
-	public void setStartMoment(String startMoment) {
+	public void setStartMoment(Instant startMoment) {
 		this.startMoment = startMoment;
 	}
 
-	public String getEndMoment() {
+	public Instant getEndMoment() {
 		return endMoment;
 	}
 
-	public void setEndMoment(String endMoment) {
+	public void setEndMoment(Instant endMoment) {
 		this.endMoment = endMoment;
 	}
 	
